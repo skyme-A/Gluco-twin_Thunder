@@ -85,7 +85,7 @@ export default function App() {
     let isMounted = true;
     async function fetchForecast() {
       try {
-        const res = await fetch('http://127.0.0.1:8000/predict', {
+        const res = await fetch('https://gluco-twin-thunder.onrender.com/predict', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -287,8 +287,8 @@ export default function App() {
               <button
                 onClick={() => setViewMode('patient')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-semibold transition-all ${viewMode === 'patient'
-                    ? 'bg-white text-stone-900 shadow-xs'
-                    : 'text-stone-600 hover:text-stone-900'
+                  ? 'bg-white text-stone-900 shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900'
                   }`}
               >
                 <Smile className="w-3.5 h-3.5 text-amber-500" />
@@ -297,8 +297,8 @@ export default function App() {
               <button
                 onClick={() => setViewMode('clinician')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-semibold transition-all ${viewMode === 'clinician'
-                    ? 'bg-white text-stone-900 shadow-xs'
-                    : 'text-stone-600 hover:text-stone-900'
+                  ? 'bg-white text-stone-900 shadow-xs'
+                  : 'text-stone-600 hover:text-stone-900'
                   }`}
               >
                 <Stethoscope className="w-3.5 h-3.5 text-orange-600" />
@@ -412,18 +412,18 @@ export default function App() {
             {/* Dynamic Status / Alert Banner */}
             <div
               className={`backdrop-blur-xl border-2 rounded-3xl p-4.5 shadow-md transition-all flex items-start gap-3.5 ${forecastState.status === 'hyper'
-                  ? 'bg-amber-100/95 border-amber-400 text-amber-950'
-                  : forecastState.status === 'hypo'
-                    ? 'bg-rose-100/95 border-rose-400 text-rose-950'
-                    : 'bg-emerald-100/95 border-emerald-400 text-emerald-950'
+                ? 'bg-amber-100/95 border-amber-400 text-amber-950'
+                : forecastState.status === 'hypo'
+                  ? 'bg-rose-100/95 border-rose-400 text-rose-950'
+                  : 'bg-emerald-100/95 border-emerald-400 text-emerald-950'
                 }`}
             >
               <div
                 className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${forecastState.status === 'hyper'
-                    ? 'bg-amber-500 text-white'
-                    : forecastState.status === 'hypo'
-                      ? 'bg-rose-500 text-white'
-                      : 'bg-emerald-600 text-white'
+                  ? 'bg-amber-500 text-white'
+                  : forecastState.status === 'hypo'
+                    ? 'bg-rose-500 text-white'
+                    : 'bg-emerald-600 text-white'
                   }`}
               >
                 {forecastState.status === 'hyper' ? (
@@ -595,8 +595,8 @@ export default function App() {
                       key={idx}
                       onClick={() => { setActiveMealPreset(idx); setCarbs(m.carbs); }}
                       className={`text-left p-2.5 rounded-2xl text-[11px] font-bold border transition-all ${activeMealPreset === idx
-                          ? 'bg-amber-200 border-amber-400 text-amber-950 shadow-xs'
-                          : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
+                        ? 'bg-amber-200 border-amber-400 text-amber-950 shadow-xs'
+                        : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
                         }`}
                     >
                       <div className="truncate flex items-center gap-1">
